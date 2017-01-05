@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170105204150) do
   create_table "friendships", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "acceptor_id"
-    t.boolean  "accepted?",   default: false
+    t.boolean  "accepted",    default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
