@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :receivers, through: :posts
   has_many :friendships, foreign_key: :sender_id
   has_many :acceptors, through: :friendships, foreign_key: :acceptor_id
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key =>:acceptor_id
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :sender
 
   def self.find_author(post)
     author = User.find_by(id: post.author_id)
