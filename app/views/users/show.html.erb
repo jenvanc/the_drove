@@ -9,3 +9,10 @@
 <%= link_to "My Friends", friendships_path%>
 
 <h3> Profile Wall </h3>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.body %></li>
+    posted by <%= find_author_of_post(post) %>
+  <% end %>
+</ul>
