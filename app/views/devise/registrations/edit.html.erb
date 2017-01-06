@@ -9,8 +9,13 @@
   </div>
 
   <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :birthday %><br />
-    <%= f.date_select :birthday, %>
+    <%= f.date_select :birthday, {start_year: Date.today.year - 110, end_year: Date.today.year} %>
   </div>
 
   <div class="field">
