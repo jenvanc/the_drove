@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :friendships
 
   resources :users, only: [:index, :show]
-  # get '/users/index', to: 'users#index'
-  # get '/users/:id', to: 'users#show'
 
+  resources :posts
 end
