@@ -1,10 +1,10 @@
-<%@display_users.each do |user|%>
-<ul>
- <li>
-  <%=user.email%>
-  <%= link_to 'Send Friend Request', new_friendship_path(acceptor_id: user.id)%>
-  <%= link_to 'Accept Friend Request', edit_friendship_path(id: user.id)%>
-  <%= link_to 'Delete', friendship_path(user.id), method: :delete %>
- </li>
-</ul>
-  <%end%>
+<% @display_users.each do |user|%>
+  <ul>
+   <li>
+    <%=user.email%>
+    <%= link_to 'Send Friend Request', new_friendship_path(acceptor_id: user.id)%>
+    <%= link_to 'Accept Friend Request', edit_friendship_path(id: user.id)%>
+    <%= link_to 'Delete', friendship_path(user.id), method: :delete %>
+   </li>
+  </ul>
+<%end%>

@@ -1,0 +1,18 @@
+<h1>Hello, <%= @user.first_name %> </h1>
+
+<ul>
+ <li>
+   Birthday: <%= "#{@user.birthday.month}/" + "#{@user.birthday.day}/" + "#{@user.birthday.year}"%>
+ </li>
+</ul>
+
+<%= link_to "My Friends", friendships_path%>
+
+<h3> Profile Wall </h3>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.body %></li>
+    posted by <%= find_author_of_post(post) %>
+  <% end %>
+</ul>
