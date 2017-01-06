@@ -1,5 +1,6 @@
 <h1>Welcome to The Drove</h1>
-
-<%= link_to "My Friends", friendships_path%>
-
-<h3> Profile Wall </h3>
+  <% if user_signed_in? %>
+    <%= link_to "Your Profile", user_path(id: current_user.id) %>
+  <% else %>
+    <%= "Please create an account" %>
+  <% end %>

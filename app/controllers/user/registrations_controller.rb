@@ -18,7 +18,6 @@ before_action :configure_account_update_params, only: [:update]
 
   # PUT /resource
   def update
-    binding.pry
     super
   end
 

@@ -15,7 +15,6 @@ class FriendshipsController < ApplicationController
      else
        @errors = @friendship.errors.full_messages
      end
-
   end
 
   def edit
@@ -38,7 +37,7 @@ class FriendshipsController < ApplicationController
   end
 
   def friendship_params
-  params.require(:friendship).permit(:acceptor_id)
-end
+    params.require(:friendship).permit(:acceptor_id)
+  end
 
 end
