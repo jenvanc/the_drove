@@ -3,6 +3,8 @@ class FriendshipsController < ApplicationController
      @user = current_user
      @user_friendships = Friendship.get_user_friendships(@user)
      @user_pending_friendships = Friendship.user_pending_friendships(@user)
+     @data = {current_friend:@user_friendships, pending_friends: @user_pending_friendships}
+     render json: @data
   end
 
   def new
